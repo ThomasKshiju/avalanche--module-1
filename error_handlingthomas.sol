@@ -1,23 +1,27 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.7;
 
-contract Error {
-    string public state = "Number is divisible by 5";
-    
-    function _require(uint _x) public view returns (string memory){
-        require(_x % 5 == 0, "Input must be divisible by 5");
-        return state;
+contract ErrorHandling {
+    string public process = "It is a negative integer";
+
+    function requireCheck(int _x) public pure returns (string memory) {
+        require(_x < 0, "Input must be a negative number");
+        return "It is a negative integer";
     }
-    
-    function _revert(uint _x) public view returns (string memory){
-        if(_x % 5 != 0){
-            revert("Input must be divisible by 5");
+
+    function assertCheck(int _x) public pure returns (string memory) {
+        assert(_x < 0);
+        return "It is a negative integer";
+    }
+
+    function revertCheck(int _x) public pure returns (string memory) {
+        if (_x >= 0) {
+            revert("Input should be negative");
         }
-        return state;
+        return "It is a negative integer";
     }
-    
-    function _assert(uint _x) public view returns (string memory){
-        assert(_x % 5 == 0);
-        return state;
+
+    function getProcess() public view returns (string memory) {
+        return process;
     }
-    }
+}
