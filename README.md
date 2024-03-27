@@ -1,8 +1,8 @@
 
 
-#### Negative number checker Error Handling
+### Negative number checker Error Handling
 
-### Description
+## Description
 This Solidity smart contract provides functions to demonstrate various error handling mechanisms:
 
 - requireCheck: Uses the require statement to check if the input is negative.
