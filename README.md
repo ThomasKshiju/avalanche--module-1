@@ -1,6 +1,6 @@
 
 
-## Negative number checker Error Handling
+## Negative number checker- Error Handling
 
 ### Description
 This Solidity smart contract provides functions to demonstrate various error handling mechanisms:
